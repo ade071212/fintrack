@@ -66,7 +66,7 @@ export default async function DashboardPage() {
       value: fmt(totalBalance),
       change: `${wallets.length} wallet${wallets.length !== 1 ? 's' : ''}`,
       changeType: 'neutral' as const,
-      icon: Wallet,
+      icon: <Wallet className="w-5 h-5 text-white" />,
       gradient: 'gradient-primary',
     },
     {
@@ -74,7 +74,7 @@ export default async function DashboardPage() {
       value: fmt(monthIncome),
       change: `+${thisMonth.filter(t => t.type === 'INCOME').length} transactions`,
       changeType: 'up' as const,
-      icon: TrendingUp,
+      icon: <TrendingUp className="w-5 h-5 text-white" />,
       gradient: 'gradient-income',
     },
     {
@@ -82,7 +82,7 @@ export default async function DashboardPage() {
       value: fmt(monthExpense),
       change: `${thisMonth.filter(t => t.type === 'EXPENSE').length} transactions`,
       changeType: 'down' as const,
-      icon: TrendingDown,
+      icon: <TrendingDown className="w-5 h-5 text-white" />,
       gradient: 'gradient-expense',
     },
     {
@@ -90,7 +90,7 @@ export default async function DashboardPage() {
       value: budgets.length.toString(),
       change: `For ${monthStr}`,
       changeType: 'neutral' as const,
-      icon: Target,
+      icon: <Target className="w-5 h-5 text-white" />,
       gradient: 'gradient-primary',
     },
   ]

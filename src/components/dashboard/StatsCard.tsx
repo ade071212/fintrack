@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowUpRight, ArrowDownRight, LucideIcon } from 'lucide-react'
+import { ArrowUpRight, ArrowDownRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface StatsCardProps {
@@ -9,12 +9,12 @@ interface StatsCardProps {
   value: string
   change?: string
   changeType?: 'up' | 'down' | 'neutral'
-  icon: LucideIcon
+  icon: React.ReactNode
   gradient: string
   index: number
 }
 
-export function StatsCard({ title, value, change, changeType, icon: Icon, gradient, index }: StatsCardProps) {
+export function StatsCard({ title, value, change, changeType, icon, gradient, index }: StatsCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ export function StatsCard({ title, value, change, changeType, icon: Icon, gradie
         </div>
 
         <div className={cn('w-11 h-11 rounded-xl flex items-center justify-center shadow-lg', gradient)}>
-          <Icon className="w-5 h-5 text-white" />
+          {icon}
         </div>
       </div>
     </motion.div>
