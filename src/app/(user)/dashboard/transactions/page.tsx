@@ -112,11 +112,11 @@ export default function TransactionsPage() {
           <p className="text-muted-foreground text-sm">{transactions.length} total records</p>
         </div>
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger render={
+          <SheetTrigger asChild>
             <Button className="gradient-primary text-white border-0 shadow-lg rounded-xl gap-2">
               <Plus className="w-4 h-4" /> Add Transaction
             </Button>
-          } />
+          </SheetTrigger>
           <SheetContent className="w-full sm:max-w-md overflow-y-auto">
             <SheetHeader>
               <SheetTitle>Add Transaction</SheetTitle>

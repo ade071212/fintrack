@@ -143,11 +143,11 @@ export default function WalletsPage() {
           <p className="text-muted-foreground text-sm">{wallets.length} wallet{wallets.length !== 1 ? 's' : ''}</p>
         </div>
         <Dialog open={open} onOpenChange={setOpen}>
-          <DialogTrigger render={
+          <DialogTrigger asChild>
             <Button className="gradient-primary text-white border-0 shadow-lg rounded-xl gap-2">
               <Plus className="w-4 h-4" /> New Wallet
             </Button>
-          } />
+          </DialogTrigger>
           <DialogContent className="rounded-2xl max-w-sm">
             <DialogHeader><DialogTitle>Create Wallet</DialogTitle></DialogHeader>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-2">
