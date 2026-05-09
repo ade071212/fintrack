@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import {
   PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer
 } from 'recharts'
+import { PieChart as PieChartIcon } from 'lucide-react'
 
 interface ChartData {
   name: string
@@ -39,7 +40,7 @@ export function ExpenseDonut({ data }: ExpenseDonutProps) {
   if (data.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-48 text-muted-foreground text-sm">
-        <PieChart className="w-10 h-10 mb-3 opacity-30" />
+        <PieChartIcon className="w-10 h-10 mb-3 opacity-30" />
         <p>No expense data yet</p>
         <p className="text-xs mt-1">Add a transaction to see the chart</p>
       </div>
